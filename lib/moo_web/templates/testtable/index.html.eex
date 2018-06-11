@@ -1,0 +1,26 @@
+<table style="text-align:center; border: 1px solid black">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= for user <- @users do %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.fname %></td>
+      <td><%= user.lname %></td>
+      <td><%= user.phone %></td>
+      <td><%= user.email %></td>
+      <td><%= link "Show", to: testtable_path(@conn, :show, user) %></td>
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
+
+<span><%= link "New User", to: testtable_path(@conn, :new) %></span>

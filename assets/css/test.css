@@ -1,0 +1,12 @@
+body{
+  background-color:grey;
+  color: #f2f2f2;
+}
+th{
+  padding:1em;
+  border:solid 1px black;
+}
+td{
+  padding:1em;
+  border:solid 1px black;
+}
