@@ -4,6 +4,7 @@ defmodule Moo.Identity do
   alias Moo.Repo
 
   alias Moo.Identity.User
+  alias Moo.Identity.Adress
 
   def list_users do
     Repo.all(User)
@@ -17,7 +18,6 @@ defmodule Moo.Identity do
 
   def get_user!(id), do: Repo.get!(User,id)
 
-  alias Moo.Identity.Adress
 
   def list_adresses do
     Repo.all(Adress)
