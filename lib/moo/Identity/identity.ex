@@ -14,6 +14,7 @@ defmodule Moo.Identity do
     %User{}
     |> User.changeset(attrs)
     |> Repo.insert()
+
   end
 
   def get_user!(id), do: Repo.get!(User,id)
@@ -26,7 +27,7 @@ defmodule Moo.Identity do
   def create_adress(attrs \\ %{}) do
     %Adress{}
     |> Adress.changeset(attrs)
-    |> Repo.insert()
+
   end
 
   def get_adress!(id), do: Repo.get!(Adress, id)

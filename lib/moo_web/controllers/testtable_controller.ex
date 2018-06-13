@@ -2,7 +2,7 @@ defmodule MooWeb.TesttableController do
   use MooWeb, :controller
 
   alias Moo.Identity
-  alias Moo.Idendity.User
+  alias Moo.Identity.User
   alias Moo.Identity.Adress
 
 

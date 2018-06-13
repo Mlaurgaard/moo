@@ -7,15 +7,15 @@ defmodule Moo.Identity.User do
     field :lname, :string
     field :phone, :string
     field :email, :string
-    has_one :adresses, Moo.Identity.Adress
+    has_one :adress, Moo.Identity.Adress
     timestamps()
   end
 
   def changeset(user, attrs) do
     user
-    |> Moo.Repo.preload(:adresses)
-    |> cast_assoc(attrs, [:fname, :lname, :phone, :email, :adresses])
-    |> Ecto.Changeset.cast_assoc(:adresses)
-    |> validate_required([:fname, :lname, :phone, :email, :adresses])
+    |> Moo.Repo.preload(:adress)
+    |> cast(attrs, [:fname, :lname, :phone, :email])
+    |> validate_required([:fname, :lname, :phone, :email])
+    |> cast_assoc(:adress)
   end
 end
