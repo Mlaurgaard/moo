@@ -19,6 +19,6 @@ defmodule Moo.Identity.Adress do
     |> Moo.Repo.preload(:user)
     |> cast(attrs, [:adress, :post_number, :city, :country, :user_id])
     |> validate_required([:adress, :post_number, :city, :country, :user_id])
-    
+    |> foreign_key_constraint(:user_id)
   end
 end

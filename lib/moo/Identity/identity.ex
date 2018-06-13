@@ -27,7 +27,7 @@ defmodule Moo.Identity do
   def create_adress(attrs \\ %{}) do
     %Adress{}
     |> Adress.changeset(attrs)
-
+    
   end
 
   def get_adress!(id), do: Repo.get!(Adress, id)
