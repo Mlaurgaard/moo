@@ -9,10 +9,7 @@ defmodule Moo.Identity do
   def list_users do
     Repo.all(User)
     |> Moo.Repo.preload(:adress)
-<<<<<<< HEAD
 
-=======
->>>>>>> dbe7bcd837b21225bdb51605fe637d692485a749
   end
 
   def create_user(attrs \\ %{}) do
