@@ -8,7 +8,6 @@ defmodule Moo.Identity.Adress do
     field :post_number, :integer
     field :city, :string
     field :country, :string
-
     belongs_to :user, Moo.Identity.User
 
     timestamps()
@@ -19,7 +18,7 @@ defmodule Moo.Identity.Adress do
     |> Moo.Repo.preload(:user)
     |> cast(attrs, [:adress, :post_number, :city, :country, :user_id])
     |> validate_required([:adress, :post_number, :city, :country, :user_id])
-    |> foreign_key_constraint(:user_id)
+
   end
 
 

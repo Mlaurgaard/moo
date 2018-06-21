@@ -17,11 +17,17 @@
       <td><%= user.lname %></td>
       <td><%= user.phone %></td>
       <td><%= user.email %></td>
+      <%= for adress <- @adresses do %>
+      <td><%= adress.country %></td>
+      <% end %>
       <td><%= link "Show", to: testtable_path(@conn, :show, user) %></td>
 
     </tr>
     <% end %>
+<<<<<<< HEAD
 
+=======
+>>>>>>> dbe7bcd837b21225bdb51605fe637d692485a749
   </tbody>
 </table>
 
