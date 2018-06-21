@@ -2,6 +2,7 @@
 /_build
 /db
 /deps
+/package-lock.json 
 /*.ez
 
 # Generated on crash by the VM

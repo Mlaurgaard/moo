@@ -7,7 +7,7 @@ defmodule Moo.Identity.User do
     field :lname, :string
     field :phone, :string
     field :email, :string
-    has_one :adress, Moo.Identity.Adress
+    has_many :adress, Moo.Identity.Adress
     timestamps()
   end
 

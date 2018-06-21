@@ -8,6 +8,8 @@ defmodule Moo.Identity do
 
   def list_users do
     Repo.all(User)
+    |> Moo.Repo.preload(:adress)
+
   end
 
   def create_user(attrs \\ %{}) do
@@ -17,7 +19,7 @@ defmodule Moo.Identity do
 
   end
 
-  def get_user!(id), do: Repo.get!(User,id)
+  def get_user!(id), do: Repo.get!(User,id) |> Moo.Repo.preload(:adress)
 
 
   def list_adresses do
@@ -27,7 +29,7 @@ defmodule Moo.Identity do
   def create_adress(attrs \\ %{}) do
     %Adress{}
     |> Adress.changeset(attrs)
-    
+    |> Repo.insert()
   end
 
   def get_adress!(id), do: Repo.get!(Adress, id)

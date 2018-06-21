@@ -6,10 +6,11 @@
       <th>Last name</th>
       <th>Phone</th>
       <th>Email</th>
+      <th>Country</th>
     </tr>
   </thead>
   <tbody>
-  <%= for user <- @users do %>
+    <%= for user <- @users do %>
     <tr>
       <td><%= user.id %></td>
       <td><%= user.fname %></td>
@@ -17,8 +18,9 @@
       <td><%= user.phone %></td>
       <td><%= user.email %></td>
       <td><%= link "Show", to: testtable_path(@conn, :show, user) %></td>
+
     </tr>
-  <% end %>
+    <% end %>
 
   </tbody>
 </table>

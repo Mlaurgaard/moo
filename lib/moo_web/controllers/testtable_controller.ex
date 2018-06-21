@@ -1,9 +1,13 @@
 defmodule MooWeb.TesttableController do
   use MooWeb, :controller
 
+  import Ecto.Query, warn: false
+  alias Moo.Repo
+
   alias Moo.Identity
   alias Moo.Identity.User
   alias Moo.Identity.Adress
+
 
 
   def index(conn, _params) do
@@ -17,5 +21,6 @@ defmodule MooWeb.TesttableController do
     adress = Identity.get_adress!(id)
     render(conn, "show.html", user: user, adress: adress)
   end
+
 
  end
