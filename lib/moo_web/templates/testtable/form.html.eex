@@ -29,25 +29,32 @@
     <%= error_tag f, :email %>
   </div>
 
-  
+  <%= inputs_for f, :adress, fn p -> %>
   <div class="form-group">
-    <%= label f, :city, class: "control-label" %>
-    <%= text_input f, :city, class: "form-control" %>
-    <%= error_tag f, :city %>
+    <%= label p, :adress, class: "control-label" %>
+    <%= text_input p, :adress, class: "form-control" %>
+    <%= error_tag p, :adress %>
+  </div>
+
+
+  <div class="form-group">
+    <%= label p, :city, class: "control-label" %>
+    <%= text_input p, :city, class: "form-control" %>
+    <%= error_tag p, :city %>
   </div>
 
   <div class="form-group">
-    <%= label f, :country, class: "control-label" %>
-    <%= text_input f, :country, class: "form-control" %>
-    <%= error_tag f, :country %>
+    <%= label p, :country, class: "control-label" %>
+    <%= text_input p, :country, class: "form-control" %>
+    <%= error_tag p, :country %>
   </div>
 
   <div class="form-group">
-    <%= label f, :post_number, class: "control-label" %>
-    <%= number_input f, :post_number, class: "form-control" %>
-    <%= error_tag f, :post_number %>
+    <%= label p, :post_number, class: "control-label" %>
+    <%= number_input p, :post_number, class: "form-control" %>
+    <%= error_tag p, :post_number %>
   </div>
-
+<% end %>
 
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>

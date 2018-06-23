@@ -23,17 +23,13 @@ defmodule MooWeb.TesttableController do
   end
 
   def new(conn, _params) do
-    adress = Adress.changeset(%Adress{})
-    changeset = User.changeset(%User{adress: [adress]})
-
+    changeset = User.changeset(%User{adress: [%Adress{}]})
     render conn, "new.html", changeset: changeset
   end
 
   def create(conn, %{"user" => user_params}) do
-    adress_changeset = Adress.changeset(%Adress{}, user_params["adress"]["0"])
+    IO.inspect user_params
     changeset = User.changeset(%User{}, user_params)
-      |> Ecto.Changeset.put_assoc(:adress, [adress_changeset])
-
     case Repo.insert(changeset) do
       {:ok, user} ->
         adress = Enum.at(user.adress, 0) |> Repo.preload(:user)
@@ -45,21 +41,5 @@ defmodule MooWeb.TesttableController do
   end
 
 
-  #def new(conn, _params) do
-  #  changeset = User.changeset(%User{adress: [Adress.changeset(%Adress{})
-  #]})
-  #  render(conn, "new.html", changeset: changeset)
-  #end
-
-  #def create(conn, %{"user" => user_params}) do
-  #  changeset = User.changeset(%User{}, user_params)
-  #  case Repo.insert(changeset) do
-  #    {:ok, _user} ->
-  #      conn
-  #      |> redirect(to: testtable_path(conn, :index))
-  #    {:error, changeset} ->
-  #  render(conn, "new.html", changeset: changeset)
-  #  end
-  #end
 
  end
