@@ -21,8 +21,10 @@
       <td><%= adress.city %></td>
       <% end %>
       <td><%= link "Show", to: testtable_path(@conn, :show, user) %></td>
+
     </tr>
     <% end %>
+
   </tbody>
 </table>
 

@@ -1,10 +1,13 @@
 defmodule MooWeb.TesttableController do
   use MooWeb, :controller
 
+  import Ecto.Query, warn: false
   alias Moo.Repo
+
   alias Moo.Identity
   alias Moo.Identity.User
   alias Moo.Identity.Adress
+
 
 
   def index(conn, _params) do

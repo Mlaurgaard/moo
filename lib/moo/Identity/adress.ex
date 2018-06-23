@@ -18,4 +18,6 @@ defmodule Moo.Identity.Adress do
     |> cast(attrs, [:adress, :post_number, :city, :country, :user_id])
     |> validate_required([:post_number, :city, :country])
   end
+
+
 end
