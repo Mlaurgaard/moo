@@ -13,11 +13,9 @@ defmodule Moo.Identity.Adress do
     timestamps()
   end
 
-  def changeset(adress, attrs) do
+  def changeset(adress, attrs \\ %{}) do
     adress
-    |> Moo.Repo.preload(:user)
     |> cast(attrs, [:adress, :post_number, :city, :country, :user_id])
-    |> validate_required([:adress, :post_number, :city, :country, :user_id])
-
+    |> validate_required([:post_number, :city, :country])
   end
 end

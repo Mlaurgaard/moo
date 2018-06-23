@@ -21,6 +21,13 @@ defmodule Moo.Identity do
 
   def get_user!(id), do: Repo.get!(User,id) |> Moo.Repo.preload(:adress)
 
+  def change_user(%User{} = user) do
+    User.changeset(user, %{})
+  end
+
+  def change_adress(%Adress{} = adress) do
+    Adress.changeset(adress, %{})
+  end
 
   def list_adresses do
     Repo.all(Adress)
@@ -34,5 +41,6 @@ defmodule Moo.Identity do
   end
 
   def get_adress!(id), do: Repo.get!(Adress, id)
+
 
 end

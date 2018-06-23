@@ -11,11 +11,10 @@ defmodule Moo.Identity.User do
     timestamps()
   end
 
-  def changeset(user, attrs) do
+  def changeset(user, attrs \\ %{}) do
     user
-    |> Moo.Repo.preload(:adress)
     |> cast(attrs, [:fname, :lname, :phone, :email])
-    |> validate_required([:fname, :lname, :phone, :email])
     |> cast_assoc(:adress)
+    |> validate_required([:fname, :lname, :phone, :email])
   end
 end

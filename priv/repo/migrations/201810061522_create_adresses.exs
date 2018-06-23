@@ -7,7 +7,7 @@ defmodule Moo.Repo.Migrations.CreateAdresses do
       add :post_number, :integer
       add :city, :string
       add :country, :string
-      add :user_id, references(:users, on_delete: :nothing)
+      add :user_id, references(:users, on_delete: :delete_all)
 
       timestamps()
     end
