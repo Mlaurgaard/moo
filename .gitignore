@@ -1,8 +1,7 @@
 # App artifacts
 /_build
 /db
-/deps
- assets/package-lock.json
+/de
 /*.ez
 
 # Generated on crash by the VM

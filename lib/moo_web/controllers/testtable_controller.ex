@@ -35,7 +35,7 @@ defmodule MooWeb.TesttableController do
         conn
         |> redirect(to: testtable_path(conn, :index))
       {:error, changeset} ->
-    render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset)
     end
   end
 
